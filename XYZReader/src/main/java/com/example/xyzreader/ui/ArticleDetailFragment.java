@@ -134,19 +134,19 @@ public class ArticleDetailFragment extends Fragment implements
 
         mBody = (TextView) mRootView.findViewById(R.id.article_body);
 
-        mAuthor = (TextView) mRootView.findViewById(R.id.article_byline);
+        mAuthor = (TextView) mRootView.findViewById(R.id.article_author);
 
         fab = (ImageButton) mRootView.findViewById(R.id.share_fab);
 
-        mToolbar = (Toolbar) mRootView.findViewById(R.id.toolbar2);
+        mToolbar = (Toolbar) mRootView.findViewById(R.id.detail_toolbar);
 
         mBody.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Rosario-Regular.ttf"));
 
         mTitle = (TextView) mRootView.findViewById(R.id.article_title);
 
-      //  metaBar = (LinearLayout) mRootView.findViewById(R.id.meta_bar);
+        metaBar = (LinearLayout) mRootView.findViewById(R.id.meta_bar);
 
-        mCollapsingToolbarLayout = (CollapsingToolbarLayout) mRootView.findViewById(R.id.toolbar_container2);
+        mCollapsingToolbarLayout = (CollapsingToolbarLayout) mRootView.findViewById(R.id.toolbar_layout);
 
         return mRootView;
     }
@@ -156,7 +156,7 @@ public class ArticleDetailFragment extends Fragment implements
             public void onGenerated(Palette palette) {
                 int defaultColor = 0xFF333333;
                 int darkMutedColor = palette.getDarkMutedColor(defaultColor);
-               // metaBar.setBackgroundColor(darkMutedColor);
+                metaBar.setBackgroundColor(darkMutedColor);
                 if (mCollapsingToolbarLayout != null) {
                     mCollapsingToolbarLayout.setContentScrimColor(darkMutedColor);
                     mCollapsingToolbarLayout.setStatusBarScrimColor(darkMutedColor);
